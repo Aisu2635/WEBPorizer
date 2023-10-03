@@ -1,32 +1,53 @@
-hi , so this BOT will automatically convert all the jpg and png images in your repo to webp and will optimize it automatically , 
-and will even edit all the code base code to work with it thankyou .
+# Image Conversion Bot
 
+This bot automates the conversion of JPG and PNG images in your repository to the WebP format, optimizes them, and updates the code base to work with the new format.
 
-how to contribute :
-this bot currently creates a branch , and will make a pr from that newly created branch to the branch which just got merged ,
-but it is unable to create commits as of now 
+## How to Contribute
 
+We welcome contributions to this project! To get started, follow these steps:
 
-How to Start this Bot in your Local device :
+1. Fork this repository to your GitHub account.
 
+2. Clone your forked repository to your local device:
 
-step 1 : `npm install`
+   ```bash
+   git clone https://github.com/your-username/image-conversion-bot.git
+   cd image-conversion-bot
+   code .
+   ```
 
-step 2 : In your browser, navigate to https://smee.io/.
-Click Start a new channel.
-Copy the full URL under "Webhook Proxy URL". You will use this URL in a later step
+3. Install the required dependencies:
+   ```bash
+   npm install
+   ```
 
-step 3 : get values of env variables by setting ur own github app in developer settings 
+4. Set up a webhook proxy using smee.io:
++ Visit https://smee.io/ in your browser.
++ Click "Start a new channel."
++ Copy the full URL under "Webhook Proxy URL." You will use this URL in a later step.
 
-step 4 : set up .env files: APP_ID="YOUR_APP_ID"
+5. Create a GitHub App in your developer settings and note the following values:
++ APP_ID: Your GitHub App's ID.
++ WEBHOOK_SECRET: A secret key for secure communication.
++ PRIVATE_KEY_PATH: Path to your GitHub App's private key.
+
+6. Create a .env file in the root of your project and add the following values:
+```bash
+APP_ID="YOUR_APP_ID"
 WEBHOOK_SECRET="YOUR_WEBHOOK_SECRET"
 PRIVATE_KEY_PATH="YOUR_PRIVATE_KEY_PATH"
+```
 
-step 5 : run server 
-         ` npx smee -u WEBHOOK_PROXY_URL -t http://localhost:3000/api/webhook. Replace WEBHOOK_PROXY_URL`
+7. Run the server with smee.io proxy URL:
+```bash
+npx smee -u WEBHOOK_PROXY_URL -t http://localhost:3000/api/webhook
+```
 
+Test your app and create a branch for the issue you want to work on.
+Make your desired changes and commits to the branch.
+When you're ready to contribute, create a pull request (PR) from your branch to the main repository's branch you intend to merge with.
 
-test your app and make a branch for the issue 
+## Documentation
+For more details on writing code for a GitHub App and other relevant information, check out the [GitHub App Quickstart Guide](https://docs.github.com/en/apps/creating-github-apps/writing-code-for-a-github-app/quickstart).
 
-docs : https://docs.github.com/en/apps/creating-github-apps/writing-code-for-a-github-app/quickstart
-
+Thank you for contributing to this project!
